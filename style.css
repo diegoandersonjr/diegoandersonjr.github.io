@@ -5,19 +5,21 @@
    padding: 0;
    box-sizing: border-box;
 }
+.home-bg {
+   background-color: black;
+}
 
-body {
+.home-bg body {
    display: grid;
    grid-template-rows:
       minmax(auto, auto) minmax(1000px, auto) minmax(70px, auto)
-      minmax(1000px, auto) minmax(800px, auto) 2fr;
+      minmax(1000px, auto) auto;
    grid-auto-columns: auto;
    grid-template-areas:
       "header"
       "body"
       "bottombody"
       "skills"
-      "about"
       "greyline";
 }
 
@@ -49,6 +51,12 @@ body {
    text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
 }
 
+@media screen and (max-width: 768px) {
+   .logo {
+      display: none;
+   }
+}
+
 .nav-wrapper {
    display: flex;
    list-style-type: none;
@@ -71,14 +79,9 @@ body {
    color: #363247;
 }
 
-@media screen and (max-width: 600px) {
-   .nav-icon {
-      display: none;
-   }
-}
-
 .bodybox {
    grid-area: body;
+   height: 1000px;
    background-color: #414141;
    background-image: url(images/topography2.png);
    display: flex;
@@ -140,28 +143,31 @@ body {
    padding-right: 20px;
    padding-bottom: 10px;
    padding-top: 10px;
-
 }
 .langs {
    padding: 7px;
    text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
 }
+
 .bbtext {
    display: flex;
    align-items: center;
    padding-right: 10px;
-   font-size: 30px;
+   font-size: 25px;
    font-family: "Montserrat", sans-serif;
    font-weight: 600;
    text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
 }
+
 .skills-section {
    grid-area: skills;
-   background: linear-gradient(180deg, #363247 50%, #2A2A3A 50%);
+   background: linear-gradient(180deg, #363247 50%, #2a2a3a 50%);
    display: flex;
    display: inline-block;
    padding: 20px;
+   text-align: center;
    overflow: hidden;
+   width: 100%;
 }
 .skill-header {
    padding: 20px;
@@ -170,13 +176,12 @@ body {
    font-weight: 600;
    display: flex;
    display: inline-block;
-
 }
 .skill-header div {
    background-color: #8b8b8b;
    height: 4px;
    width: 300px;
-   margin-top: 30px;
+   margin-top: 20px;
    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 .boxes {
@@ -190,10 +195,14 @@ body {
 }
 .fe-box {
    background-color: #181826;
-   width: 500px;
-   height: 600px;
+   min-width: 350px;
+   max-width: 500px;
+   min-height: 600px;
+   max-height: auto;
    text-align: center;
-   padding: 70px;
+   margin-bottom: 10px;
+   margin-top: 10px;
+   padding: 60px;
    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
 }
 
@@ -212,10 +221,14 @@ body {
 }
 .ui-box {
    background-color: #181826;
-   width: 500px;
-   height: 600px;
+   min-width: 350px;
+   max-width: 500px;
+   min-height: 600px;
+   max-height: auto;
    text-align: center;
-   padding: 70px;
+   margin-bottom: 10px;
+   margin-top: 10px;
+   padding: 60px;
    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
 }
 
@@ -234,9 +247,13 @@ body {
 
 .gd-box {
    background-color: #181826;
-   width: 500px;
-   height: 600px;
-   padding: 70px;
+   min-width: 350px;
+   max-width: 500px;
+   min-height: 600px;
+   max-height: auto;
+   padding: 60px;
+   margin-bottom: 10px;
+   margin-top: 10px;
    text-align: center;
    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
 }
@@ -254,17 +271,80 @@ body {
    padding: 20px;
 }
 
-.bgsquare {
-   height: 500px;
-   background-color: #2a2a3a;
-}
-
-.about-section {
-   grid-area: about;
-   background-color: #5050c8;
-}
 .greyline {
    grid-area: greyline;
-   background-color: grey;
-   height: 10px;
+   background-color: black;
+   height: 80px;
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.greyline p {
+   color: #fff;
+   font-size: 12px;
+   font-family: "Montserrat", sans-serif;
+}
+
+.port-bg {
+   background-color: #ffffff;
+}
+.portfolio-main-page {
+   background-color: #2c2b2b;
+   height: 100%;
+   width: 100%;
+   display: flex;
+   display: block;
+   overflow: hidden;
+}
+
+h2 {
+   font-size: 25px;
+   font-family: "Montserrat", sans-serif;
+   color: #fff;
+   text-align: center;
+   text-decoration: underline;
+   text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+.port-main-wrapper {
+display: flex;
+align-items: center;
+flex-direction: column;
+padding-top: 20px;
+}
+
+.port-images {
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
+width: 100%;
+margin: 20px;
+padding: 20px;
+background-color: rgba(25, 25, 25, 0.65);
+}
+
+div.gallery {
+   margin: 5px;
+   float: left;
+   width: 280px;
+   text-align: center;
+ }
+
+div .gallery img:hover {
+   opacity: 50%;
+}
+
+div.gallery img {
+   padding: 15px;
+   background-color: rgba(0, 0, 0, 0.4);
+}
+
+div.desc {
+   padding: 15px;
+   text-align: center;
+   font-family: "Montserrat", sans-serif;
+   color: #fff;
+   background-color: rgba(0, 0, 0, 0.4);
+   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
 }
