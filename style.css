@@ -348,3 +348,29 @@ div.desc {
    background-color: rgba(0, 0, 0, 0.4);
    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
 }
+
+.contact-bg {
+   background-color: #181826;  
+   overflow: hidden;
+}
+
+.contact-main {
+   height: 1000px;
+   font-family: "Montserrat", sans-serif;
+   font-size: 20px;
+   color: #fff;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+
+.contactTextBox h1 {
+   text-align: center;
+
+}
+
+.contactTextBox p {
+   text-align: left;
+
+}
